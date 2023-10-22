@@ -1,0 +1,41 @@
+.strength-bar-container {
+  margin-top: 12px;
+  background-color: gray;
+  width: 296px;
+  height: 12px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.strength-sections {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.strength-bar {
+  position: absolute;
+  z-index: 2;
+  left: -100%;
+  transition: 300ms;
+}
+
+.strength-bar .short {
+  left: 0%;
+  background-color: red;
+}
+.strength-bar .easy {
+  left: -68.5%;
+  background-color: red;
+}
+.strength-bar .medium {
+  left: -34.25%;
+  background-color: yellow;
+}
+.strength-bar .strong {
+  left: 0%;
+  background-color: green;
+}
