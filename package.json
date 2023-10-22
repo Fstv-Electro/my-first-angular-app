@@ -1,13 +1,11 @@
 {
-  "homepage": "http://Fstv-electro.github.io/my-first-angular-app",
+  "homepage": "http://Fstv-Electro.github.io/my-first-angular-app/",
   "name": "my-first-angular-app",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -31,7 +29,7 @@
     "@angular/cli": "^16.2.7",
     "@angular/compiler-cli": "^16.2.0",
     "@types/jasmine": "~4.3.0",
-    "gh-pages": "^6.0.0",
+    "angular-cli-ghpages": "^1.0.7",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
