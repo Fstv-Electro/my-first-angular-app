@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { PasswordStrengthService } from 'src/services/password-strength.service';
 
 @Component({
@@ -7,16 +7,20 @@ import { PasswordStrengthService } from 'src/services/password-strength.service'
   styleUrls: ['./strength-bar.component.css']
 })
   
-export class StrengthBarComponent implements OnInit{
+export class StrengthBarComponent implements OnInit, OnChanges{
   constructor(private PasswordStrengthService: PasswordStrengthService) { }
-  PasswordStrength = 'empty';
+  passwordStrength = 'empty';
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(this.passwordStrength)
+  }
 
   ngOnInit(): void {
-    this.PasswordStrengthService.currentPasswordStrength.subscribe((value) => {
+    this.PasswordStrengthService.currentPasswordLevel.subscribe((value) => {
       if (value === 'error') {
         window.alert('validation error')
       } else {
-        this.PasswordStrength = value;
+        this.passwordStrength = value;
       }
     })  
   }

@@ -1,9 +1,9 @@
 .strength-bar-container {
   margin-top: 12px;
-  background-color: gray;
-  width: 296px;
-  height: 12px;
-  border-radius: 12px;
+
+  width: 280px;
+  /* height: 12px; */
+
   overflow: hidden;
   position: relative;
 }
@@ -17,25 +17,40 @@
 }
 
 .strength-bar {
-  position: absolute;
-  z-index: 2;
-  left: -100%;
-  transition: 300ms;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  text-align: center;
 }
 
-.strength-bar .short {
-  left: 0%;
+.strength-bar-item.short {
   background-color: red;
 }
-.strength-bar .easy {
-  left: -68.5%;
+
+.strength-bar-item {
+  padding: 4px;
+  background-color: gray;
+  border-radius: 12px;
+}
+
+.strength-bar-item.easy {
   background-color: red;
 }
-.strength-bar .medium {
-  left: -34.25%;
+
+.strength-bar-item.easy:nth-child(n + 2) {
+  background-color: gray;
+}
+
+.strength-bar-item.medium {
   background-color: yellow;
 }
-.strength-bar .strong {
-  left: 0%;
+
+.strength-bar-item.medium:nth-child(n + 3) {
+  background-color: gray;
+}
+
+.strength-bar-item.strong {
   background-color: green;
 }

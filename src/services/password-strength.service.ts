@@ -7,12 +7,15 @@ import { BehaviorSubject } from "rxjs";
 })
     
 export class PasswordStrengthService {
-    private passwordStrength = new BehaviorSubject('empty');
-    currentPasswordStrength = this.passwordStrength.asObservable();
-
-    constructor() { }
     
-    private getPasswordStrength(password: string): any {
+    private passwordLevel = new BehaviorSubject('empty');
+    currentPasswordLevel = this.passwordLevel.asObservable();
+
+    updatePassword(password: string) {
+        this.passwordLevel.next(this.getPasswordLevel(password));
+    };
+    
+    private getPasswordLevel(password: string): any {
         const letterReg = /^[a-zA-Z]+$/;
         const digitsReg = /^\d+$/;
         const symbolsReg = /^[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]+$/;
@@ -43,9 +46,4 @@ export class PasswordStrengthService {
 
         return 'error';
     };
-
-    updatePassword(password: string) {
-        this.passwordStrength.next(this.getPasswordStrength(password));
-    };
-
 }

@@ -1,4 +1,8 @@
 <div class="strength-bar-container">
   <div class="strength-sections"></div>
-  <div class="strength-bar" [ngClass]="PasswordStrength"></div>
+  <ul class="strength-bar" [ngClass]="passwordStrength">
+    <li class="strength-bar-item" [ngClass]="passwordStrength">Easy</li>
+    <li class="strength-bar-item" [ngClass]="passwordStrength">Medium</li>
+    <li class="strength-bar-item" [ngClass]="passwordStrength">Strong</li>
+  </ul>
 </div>
