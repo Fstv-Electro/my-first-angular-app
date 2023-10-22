@@ -1,4 +1,4 @@
-import { Component, OnDestroy, forwardRef } from '@angular/core';
+import { Component, OnDestroy, forwardRef, Input } from '@angular/core';
 import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
